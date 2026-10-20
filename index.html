@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 공부 - 공부 계획</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="wrap">
+    <p class="small">UI/UX 프로그래밍 중간 프로젝트</p>
+    <h1>오늘 공부</h1>
+    <p>오늘 할 공부를 정하고 계획을 확인해 보세요.</p>
+  </header>
+  <main class="wrap">
+    <section id="editor" class="panel" aria-labelledby="editor-title">
+      <h2 id="editor-title">공부 계획 만들기</h2>
+      <p class="small">세 항목을 입력한 뒤 계획을 확인하세요.</p>
+      <form id="plan-form" novalidate>
+        <label for="subject">과목 이름</label>
+        <input id="subject" name="subject" type="text" maxlength="40" placeholder="예: 자바스크립트" required>
+        <label for="task">공부할 내용</label>
+        <textarea id="task" name="task" rows="3" maxlength="120" placeholder="예: 배열 예제 3개 풀기" required></textarea>
+        <label for="minutes">공부 시간</label>
+        <select id="minutes" name="minutes" required>
+          <option value="">시간을 선택하세요</option>
+          <option value="15">15분</option>
+          <option value="30">30분</option>
+          <option value="60">60분</option>
+          <option value="90">90분</option>
+        </select>
+        <p id="form-error" class="error" role="alert" hidden></p>
+        <button type="submit">계획 확인하기</button>
+      </form>
+    </section>
+    <section id="preview" class="panel" aria-labelledby="preview-title" hidden>
+      <h2 id="preview-title" tabindex="-1">계획 확인</h2>
+      <dl>
+        <dt>과목 이름</dt><dd id="preview-subject"></dd>
+        <dt>공부할 내용</dt><dd id="preview-task"></dd>
+        <dt>공부 시간</dt><dd id="preview-minutes"></dd>
+      </dl>
+      <div class="actions">
+        <button id="edit-button" class="secondary" type="button">내용 수정하기</button>
+        <button id="reset-button" class="secondary" type="button">새 계획 만들기</button>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap small">서버 없이 브라우저에서 동작하는 연습용 페이지입니다.</footer>
+</body>
+</html>
