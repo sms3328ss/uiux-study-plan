@@ -11,7 +11,7 @@
   <header class="wrap">
     <p class="small">UI/UX 프로그래밍 중간 프로젝트</p>
     <h1>오늘 공부</h1>
-    <p>오늘 할 공부를 정하고 계획을 확인해 보세요.</p>
+    <p>오늘 할 공부를 정하고, 저장한 계획을 다시 확인해 보세요.</p>
   </header>
   <main class="wrap">
     <section id="editor" class="panel" aria-labelledby="editor-title">
@@ -42,9 +42,18 @@
         <dt>공부 시간</dt><dd id="preview-minutes"></dd>
       </dl>
       <div class="actions">
+        <button id="save-button" type="button">이 계획 저장하기</button>
         <button id="edit-button" class="secondary" type="button">내용 수정하기</button>
         <button id="reset-button" class="secondary" type="button">새 계획 만들기</button>
       </div>
+      <p id="preview-message" class="message" role="status"></p>
+    </section>
+    <section id="saved-section" class="panel" aria-labelledby="saved-title">
+      <h2 id="saved-title">저장한 계획 <span id="saved-count">0개</span></h2>
+      <p class="small">이 브라우저에만 최대 10개까지 저장됩니다. 공용 컴퓨터에서는 사용 후 삭제하세요.</p>
+      <p id="list-message" class="message" role="status"></p>
+      <p id="empty-message" class="empty">아직 저장한 계획이 없습니다. 계획을 만든 뒤 저장해 보세요.</p>
+      <ul id="saved-list"></ul>
     </section>
   </main>
   <footer class="wrap small">서버 없이 브라우저에서 동작하는 연습용 페이지입니다.</footer>
